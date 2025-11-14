@@ -1,6 +1,8 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--text-color);
+  color: var(--background-color);
+  margin-top:3rem;
+  padding:1rem 0 1.5rem;
 }
 
 footer .footer > div {
@@ -13,8 +15,61 @@ footer .footer p {
   margin: 0;
 }
 
+footer .footer .footersocial > div {
+  display: flex;
+  background-color: var(--background-color);
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
+  gap: 15px;
+}
+
+footer .footer .footersec > div > p > a.button:any-link {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  margin-top:2.5rem;
+  padding:0px;
+  display: inline;
+}
+
+footer .footer .footersec > div > p:nth-child(2){
+  margin-left: 5rem;
+}
+
+footer .footer .footerfollow > div{
+  margin-left: 26rem;
+  margin-top:20px;
+}
+
+footer .footer .footerfollow > div > h4{
+  font-size: 1pc;
+  font-weight:600;
+}
+
+
+footer .footer .footersec > div  {
+  display: flex;
+  gap: 30px;
+}
+
+footer .footer .footersec img {
+  width: 128px;
+  height:auto;
+}
+
 @media (width >= 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;
+    display: flex;
   }
+}
+
+
+footer .footerinfo {
+  font-size : 14px;
+  font-weight:300px;
+}
+
+footer .footerinfo a:any-link {
+  color: white;
 }
