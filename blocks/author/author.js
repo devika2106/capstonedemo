@@ -1,4 +1,3 @@
-
 export default function decorate(block) {
   block.classList.add('author-wrapper-div');
   const classes = ['authorphoto', 'authordetails', 'authorsociallinks'];
