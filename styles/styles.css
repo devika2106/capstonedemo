@@ -331,15 +331,19 @@ main > .section:first-of-type {
     background-color: #ffea00;
   }
 
-  .magazineWrapper blockquote + p {margin-top: -4rem;
+  .magazineWrapper blockquote + p {
+    margin-top: -4rem;
     margin-bottom: 4rem;
-    margin-left: 5rem;}
+    margin-left: 5rem;
+    padding: 10px;
+  }
 
     .magazineWrapper blockquote > p  {
       padding: 3rem;
     font-size: 25px;
      }
 
+  
      .magazineWrapper blockquote > p::after
      {
       border-bottom: 2px solid var(--brandPrimary, #ffea00);
@@ -350,7 +354,11 @@ main > .section:first-of-type {
     }
      .magazineWrapper blockquote  {
         background-color: #ebebeb;
-        height: 14rem;
+        height: auto;
+     }
+
+     .magazineContentWrapper h1:nth-child(1) {
+      font-size: 40px;
      }
 
      .authorWrapperDiv {

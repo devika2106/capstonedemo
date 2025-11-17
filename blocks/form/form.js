@@ -116,25 +116,7 @@ export default async function decorate(block) {
   block.replaceChildren(form);
   const formWrapper = document.querySelector('.form');
 
-  const signinBlock = document.querySelectorAll('.signin');
-if (signinBlock.length == 1 )  { 
-  const signupBtn = signinBlock[0].querySelector('button');
-  if(signupBtn) {
-    signupBtn.addEventListener('click', () =>{
-     const signupBlock = document.querySelector('.signup-block');
-     if(signupBlock.classList.contains('hide')){
-      signupBlock.classList.remove('hide');
-      signupBlock.classList.add('show')
-     } else {
-      signupBlock.classList.remove('show');
-      signupBlock.classList.add('hide')
-     }
-    })
-  }
-}
-
-
-
+ 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const valid = form.checkValidity();
