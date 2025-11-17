@@ -11,8 +11,7 @@
  */
 
 /* eslint-env browser */
-//import { createModal } from "../blocks/modal/modal.js";
-
+// import { createModal } from "../blocks/modal/modal.js";
 
 function sampleRUM(checkpoint, data) {
   // eslint-disable-next-line max-len
@@ -515,7 +514,7 @@ async function decorateSections(main) {
   const sectionElement = document.querySelector('.separator');
   if (sectionElement && !sectionElement.querySelector('hr')) {
     const separator = document.createElement('hr');
-    separator.classList.add('separator')
+    separator.classList.add('separator');
     sectionElement.appendChild(separator);
   }
 
@@ -529,13 +528,12 @@ async function decorateSections(main) {
           container.className = 'socialcontainer';
           const paragraphs = listElement.querySelectorAll('p');
           if (paragraphs) {
-            paragraphs.forEach(p => container.appendChild(p));
+            paragraphs.forEach((p) => container.appendChild(p));
             listElement.appendChild(container);
           }
         }
-      })
-
-    })
+      });
+    });
   }
 
   const signupBlock = document.querySelector('.signup-block');
@@ -543,8 +541,7 @@ async function decorateSections(main) {
     signupBlock.classList.add('hide');
   }
 
-  window.addEventListener('click', function (e) {
-    const signupBlock = document.querySelector('.signup-block');
+  window.addEventListener('click', (e) => {
     const signinBlock = document.querySelector('.signin ul');
     if (signupBlock && signinBlock) {
       if (!signupBlock.contains(e.target) && !signinBlock.contains(e.target)) {
@@ -555,9 +552,7 @@ async function decorateSections(main) {
       }
     }
   });
-
 }
-
 
 /**
  * Builds a block DOM Element from a two dimensional array, string, or object
@@ -623,8 +618,6 @@ async function loadBlock(block) {
       console.error(`failed to load block ${blockName}`, error);
     }
     block.dataset.blockStatus = 'loaded';
-
-
   }
   return block;
 }
@@ -732,7 +725,6 @@ async function loadSections(element) {
     }
   }
 }
-
 
 init();
 

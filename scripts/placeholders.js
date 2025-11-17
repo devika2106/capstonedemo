@@ -12,8 +12,6 @@
 
 import { toCamelCase } from './aem.js';
 
-
-
 /**
  * Gets placeholders object.
  * @param {string} [prefix] Location of placeholders
@@ -23,7 +21,6 @@ import { toCamelCase } from './aem.js';
 export async function fetchPlaceholders(prefix = 'default') {
   window.placeholders = window.placeholders || {};
 
-  console.log("hi");
   if (!window.placeholders[prefix]) {
     window.placeholders[prefix] = new Promise((resolve) => {
       fetch(`${prefix === 'default' ? '' : prefix}/placeholders.json`)

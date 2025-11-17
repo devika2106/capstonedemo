@@ -1,3 +1,13 @@
 {
-  "extends": ["stylelint-config-standard"]
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "selector-max-compound-selectors": 9,
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      {
+        "ignoreFontFamilies": ["lock-icon", "download-icon"]
+      }
+    ]
+  }
+
 }

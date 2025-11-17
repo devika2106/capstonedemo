@@ -1,20 +1,20 @@
 @media (width >=900px) {
-    .magazineWrapper {
+    .magazine-wrapper {
         display: flex;
 
     }
 
-    .magazineWrapper > div:nth-child(1) {
+    .magazine-wrapper > div:nth-child(1) {
         width: 85%;
         margin-left: 1.5rem;
 
     }
 
-    .magazineWrapper > div:nth-child(2) {
+    .magazine-wrapper > div:nth-child(2) {
         margin: 0;
     }
 
-    .magazineWrapper > div:nth-child(2) li {
+    .magazine-wrapper > div:nth-child(2) li {
         height: 50pt;
         border-left: 5px solid #ebebeb;
         list-style: none;
@@ -23,91 +23,89 @@
         margin: 2rem;
     }
 
-    .magazineWrapper > div:nth-child(2) li > a {
+    .magazine-wrapper .listof-magazine-wrapper ul a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .magazine-wrapper > div:nth-child(2) li > a {
         text-decoration: none;
         color: var(--text-color);
     }
 
 
-    .magazineWrapper > div:nth-child(2) li:hover {
+    .magazine-wrapper > div:nth-child(2) li:hover {
         border-left: 5px solid black;
         background-color: #ffea00;
     }
 
-    .magazineWrapper blockquote + p {
+    .magazine-wrapper blockquote + p {
         margin-top: -4rem;
         margin-bottom: 4rem;
         margin-left: 5rem;
         padding: 10px;
     }
 
-    .magazineWrapper blockquote > p {
+    .magazine-wrapper blockquote > p {
         padding: 3rem;
         font-size: 25px;
     }
 
 
-    .magazineWrapper blockquote > p::after {
-        border-bottom: 2px solid var(--brandPrimary, #ffea00);
+    .magazine-wrapper blockquote > p::after {
+        border-bottom: 2px solid #ffea00;
         content: "";
         display: block;
         padding-top: 8px;
         width: 84px;
     }
 
-    .magazineWrapper blockquote {
+    .magazine-wrapper blockquote {
         background-color: #ebebeb;
         height: auto;
     }
 
-    .magazineContentWrapper h1:nth-child(1) {
+    .magazine-content-wrapper h1:nth-child(1) {
         font-size: 40px;
     }
 
-    .magazineContentWrapper {
+    .magazine-content-wrapper {
         text-align: justify;
     }
 
-    .magazineWrapper .listofMagazineWrapper p > a:any-link {
+    .magazine-wrapper .listof-magazine-wrapper p > a:any-link {
         background-color: #202020;
         color: #fff;
         float: left;
-        height: var(--buttonSize, 3pc);
+        height: 3pc;
     }
 
-    .magazineWrapper .listofMagazineWrapper ul {
+    .magazine-wrapper .listof-magazine-wrapper ul {
         margin-top: 7rem;
         text-transform: uppercase;
     }
 
-    .magazineWrapper .listofMagazineWrapper ul a {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-
-    .listofMagazineWrapper ul .title {
-        color: var(--textColor, #202020);
+    .listof-magazine-wrapper ul .title {
+        color:  #202020;
         padding: 5px;
         text-transform: uppercase;
     }
 
-    .listofMagazineWrapper ul .date {
+    .listof-magazine-wrapper ul .date {
         color: dimgray;
-        font-size: var(--fontSizeXSmall, 9pt);
+        font-size:  9pt;
         padding: 5px;
         text-transform: uppercase;
     }
 
-    .magazineWrapper .listofMagazineWrapper p,
-    .magazineWrapper .listofMagazineWrapper h4 {
+    .magazine-wrapper .listof-magazine-wrapper p,
+    .magazine-wrapper .listof-magazine-wrapper h4 {
         margin-left: 4.5rem;
         text-transform: uppercase;
         font-family: var(--body-bold-font-family);
     }
 
-    .magazineWrapper .listofMagazineWrapper h5 {
+    .magazine-wrapper .listof-magazine-wrapper h5 {
         margin-left: 4.5rem;
         text-transform: uppercase;
         font-size: 14px;
@@ -115,30 +113,25 @@
         font-family: var(--body-bold-font-family);
     }
 
-    .magazineWrapper .magazineContentWrapper p {
+    .magazine-wrapper .magazine-content-wrapper p {
         line-height: 45px;
     }
 
 
-    .magazineWrapper .listofMagazineWrapper p {
+    .magazine-wrapper .listof-magazine-wrapper p {
         font-size: 12px;
     }
 
 
 
-    .magazineWrapper .listofMagazineWrapper p > a::before {
-
-        speak: none;
+    .magazine-wrapper .listof-magazine-wrapper p > a::before {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         content: "\e900";
         color: white;
         float: left;
-        font-family: 'download-icon' !important;
-        font-size: 1.25rem;
+        font-family: download-icon !important;
         font-size: 1.1rem;
-        font-style: normal;
-        font-variant: normal;
         font-weight: 400;
         line-height: 1;
         margin-top: -.1em;
@@ -148,11 +141,11 @@
 
     }
 
-    .authorSeparator > hr {
+    .author-separator > hr {
         width: 95%;
     }
 
-    .authorSeparator {
+    .author-separator {
         margin-top: 3rem;
         margin-bottom: 3rem;
     }

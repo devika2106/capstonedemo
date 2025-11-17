@@ -24,17 +24,17 @@ footer .footer .footersocial > div {
   gap: 15px;
 }
 
+footer .footer .footersec > div > p > a.button {
+  font-size: 14px;
+  font-weight: 400;
+}
+
 footer .footer .footersec > div > p > a.button:any-link {
   background-color: var(--text-color);
   color: var(--background-color);
   margin-top:2.5rem;
-  padding:0px;
+  padding:0;
   display: inline;
-}
-
-footer .footer .footersec > div > p > a.button {
-  font-size: 14px;
-  font-weight: 400;
 }
 
 footer .footer .footersec > div > p:nth-child(2) {
@@ -73,7 +73,7 @@ footer .footer .footersec img {
 
 footer .footerinfo {
   font-size : 14px;
-  font-weight:300px;
+  font-weight:300;
 }
 
 footer .footerinfo a:any-link {

@@ -1,10 +1,10 @@
 @media (width >=900px) {
-    .authorWrapperDiv {
+    .author-wrapper-div {
         display: flex;
         width: 65%;
     }
 
-    .authorWrapperDiv .authorsociallinks  >  div {
+    .author-wrapper-div .authorsociallinks  >  div {
         background-color: black;
         display: flex;
         gap: 5px;
@@ -12,11 +12,11 @@
         margin-left: 3rem;
     }
 
-    .authorWrapperDiv .authorsociallinks > div img:before {
+    .author-wrapper-div .authorsociallinks > div img::before {
         content: "";
     }
 
-    .authorWrapperDiv .authorsociallinks > div img {
+    .author-wrapper-div .authorsociallinks > div img {
         border-radius: 50%;
         height: 20px;
         padding: 10px;
@@ -24,23 +24,23 @@
         width: 30px;
     }
 
-    .authorWrapperDiv .authorphoto > div img {
+    .author-wrapper-div .authorphoto > div img {
         border-radius: 50%;
         height: 80px;
         object-fit: cover;
         width: 80px;
     }
 
-    .authorWrapperDiv .authordetails > div {
+    .author-wrapper-div .authordetails > div {
         margin-left: 1rem;
     }
 
-    .authorWrapperDiv .authordetails {
+    .author-wrapper-div .authordetails {
         width: 55%;
     }
 
 
-    .authorWrapperDiv .authordetails p {
+    .author-wrapper-div .authordetails p {
         font-size: 12px;
         text-transform: uppercase;
     }

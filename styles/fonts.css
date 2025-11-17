@@ -63,14 +63,14 @@
 }
 
 @font-face {
-  font-family: 'lock-icon';
+  font-family: lock-icon;
   src: url('../fonts/lockicon.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'download-icon'; 
+  font-family: download-icon; 
   src: url('../fonts/icomoon.woff') format('woff');
   font-weight: normal;
   font-style: normal;
