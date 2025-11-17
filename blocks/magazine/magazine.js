@@ -1,6 +1,6 @@
 export default async function decorate(block) {
-  block.classList.add('magazineWrapper');
-  const classes = ['magazineContentWrapper', 'listofMagazineWrapper'];
+  block.classList.add('magazine-wrapper');
+  const classes = ['magazine-content-wrapper', 'listof-magazine-wrapper'];
 
   classes.forEach((c, i) => {
     block.children[i].classList.add(c);
@@ -9,7 +9,7 @@ export default async function decorate(block) {
   const meta = await fetch('/metadata.json');
   const metaData = await meta.json();
 
-  const listOfMagazine = document.querySelector('.listofMagazineWrapper div');
+  const listOfMagazine = document.querySelector('.listof-magazine-wrapper div');
   const ul = document.createElement('ul');
   metaData.data.forEach((row) => {
     const li = document.createElement('li');
@@ -30,7 +30,7 @@ export default async function decorate(block) {
 
   const separatorDiv = document.createElement('div');
   const separatorElement = document.createElement('hr');
-  separatorDiv.classList.add('section', 'separator', 'authorSeparator');
+  separatorDiv.classList.add('section', 'separator', 'author-separator');
 
   separatorElement.classList.add('separator');
   separatorDiv.appendChild(separatorElement);

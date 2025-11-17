@@ -170,7 +170,7 @@
 
 .form h3::after
 {
-   border-bottom: 2px solid var(--brandPrimary, #ffea00);
+   border-bottom: 2px solid #ffea00;
     content: "";
     display: block;
     padding-top: 8px;

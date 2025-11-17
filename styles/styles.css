@@ -316,15 +316,12 @@ main > .section:first-of-type {
   .lockedmagazine .cards ul li {
     border: none;
     opacity: .65;
+    font-size: 14px;
+
   }
 
   .lockedmagazine .cards ul li img {
     height: 211px;
-
-  }
-
-  .lockedmagazine .cards ul li {
-    font-size: 14px;
 
   }
 
@@ -339,18 +336,14 @@ main > .section:first-of-type {
   }
 
   .lockedmagazine .cards ul li::before {
-    speak: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: -webkit-gradient(linear, right bottom, left top, from(hsl(0deg 0% 100% / 0%)), color-stop(50%, hsl(0deg 0% 100% / 0%)), color-stop(50%, var(--brandPrimary, #ffea00)), to(var(--brandPrimary, #ffea00)));
-    background: linear-gradient(to top left, hsl(0deg 0% 100% / 0%) 0, hsl(0deg 0% 100% / 0%) 50%, var(--brandPrimary, #ffea00) 50%, var(--brandPrimary, #ffea00) 100%);
+    background: linear-gradient(to top left, hsl(0deg 0% 100% / 0%) 0, hsl(0deg 0% 100% / 0%) 50%, #ffea00 50%, #ffea00 100%);
     color: #000;
     content: "\e900";
     font-family: lock-icon !important;
     font-size: 1.25rem;
     font-size: 24px;
-    font-style: normal;
-    font-variant: normal;
     font-weight: 400;
     line-height: 1;
     padding: 9pt;
@@ -380,7 +373,7 @@ main .section.highlight {
 }
 
 .titleunderline > div > h2::after {
-  border-bottom: 2px solid var(--brandPrimary, #ffea00);
+  border-bottom: 2px solid #ffea00;
   content: "";
   display: block;
   padding-top: 8px;

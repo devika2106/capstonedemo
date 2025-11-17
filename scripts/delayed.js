@@ -42,12 +42,12 @@ if (currentPage.length > 1 && currentPage[1] !== '') {
   menuFooterLinks.forEach((link) => {
     const linkPage = link.getAttribute('href');
     if (linkPage.includes(currentPage[1])) {
-      link.closest('p').classList.add('footerActive');
+      link.closest('p').classList.add('footer-active');
     }
   });
 } else {
   menuFooterLinks.forEach((link) => {
     const listItem = link.closest('p');
-    listItem.classList.remove('footerActive');
+    listItem.classList.remove('footer-active');
   });
 }

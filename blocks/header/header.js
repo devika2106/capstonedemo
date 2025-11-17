@@ -170,9 +170,9 @@ export default async function decorate(block) {
   const navBar = document.getElementsByTagName('nav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      navBar[1].classList.add('scrollY');
+      navBar[1].classList.add('scroll-y');
     } else {
-      navBar[1].classList.remove('scrollY');
+      navBar[1].classList.remove('scroll-y');
     }
   });
 
