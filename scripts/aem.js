@@ -11,13 +11,16 @@
  */
 
 /* eslint-env browser */
+//import { createModal } from "../blocks/modal/modal.js";
+
+
 function sampleRUM(checkpoint, data) {
   // eslint-disable-next-line max-len
   const timeShift = () => (window.performance ? window.performance.now() : Date.now() - window.hlx.rum.firstReadTime);
   try {
     window.hlx = window.hlx || {};
     if (!window.hlx.rum || !window.hlx.rum.collector) {
-      sampleRUM.enhance = () => {};
+      sampleRUM.enhance = () => { };
       const param = new URLSearchParams(window.location.search).get('rum');
       const weight = (param === 'on' && 1)
         || (window.SAMPLE_PAGEVIEWS_AT_RATE === 'high' && 10)
@@ -472,7 +475,7 @@ function decorateIcons(element, prefix = '') {
  * Decorates all sections in a container element.
  * @param {Element} main The container element
  */
-function decorateSections(main) {
+async function decorateSections(main) {
   main.querySelectorAll(':scope > div').forEach((section) => {
     const wrappers = [];
     let defaultContent = false;
@@ -508,7 +511,53 @@ function decorateSections(main) {
       sectionMeta.parentNode.remove();
     }
   });
+
+  const sectionElement = document.querySelector('.separator');
+  if (sectionElement && !sectionElement.querySelector('hr')) {
+    const separator = document.createElement('hr');
+    separator.classList.add('separator')
+    sectionElement.appendChild(separator);
+  }
+
+  const aboutusCards = document.querySelectorAll('.aboutuscards');
+  if (aboutusCards) {
+    aboutusCards.forEach((cards) => {
+      const listElements = cards.querySelectorAll('.cards-card-body');
+      listElements.forEach((listElement) => {
+        if (!listElement.querySelector('.socialcontainer')) {
+          const container = document.createElement('div');
+          container.className = 'socialcontainer';
+          const paragraphs = listElement.querySelectorAll('p');
+          if (paragraphs) {
+            paragraphs.forEach(p => container.appendChild(p));
+            listElement.appendChild(container);
+          }
+        }
+      })
+
+    })
+  }
+
+  const signupBlock = document.querySelector('.signup-block');
+  if (signupBlock) {
+    signupBlock.classList.add('hide');
+  }
+
+  window.addEventListener('click', function (e) {
+    const signupBlock = document.querySelector('.signup-block');
+    const signinBlock = document.querySelector('.signin ul');
+    if (signupBlock && signinBlock) {
+      if (!signupBlock.contains(e.target) && !signinBlock.contains(e.target)) {
+        if (signupBlock.classList.contains('show')) {
+          signupBlock.classList.remove('show');
+          signupBlock.classList.add('hide');
+        }
+      }
+    }
+  });
+
 }
+
 
 /**
  * Builds a block DOM Element from a two dimensional array, string, or object
@@ -574,6 +623,8 @@ async function loadBlock(block) {
       console.error(`failed to load block ${blockName}`, error);
     }
     block.dataset.blockStatus = 'loaded';
+
+
   }
   return block;
 }
@@ -613,6 +664,7 @@ async function loadHeader(header) {
   const headerBlock = buildBlock('header', '');
   header.append(headerBlock);
   decorateBlock(headerBlock);
+
   return loadBlock(headerBlock);
 }
 
@@ -680,6 +732,7 @@ async function loadSections(element) {
     }
   }
 }
+
 
 init();
 

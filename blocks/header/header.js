@@ -113,6 +113,15 @@ export default async function decorate(block) {
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
+  const navSecMeta = getMetadata('headersec');
+  const navSecPath = navSecMeta ? new URL(navSecMeta, window.location).pathname : '/headersec';
+  const navSecFragment = await loadFragment(navSecPath);
+
+  const navSec = document.createElement('nav');
+  while (navSecFragment.firstElementChild) navSec.append(navSecFragment.firstElementChild);
+  navSec.children[0].classList.add('nav-sections');
+
+
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
@@ -159,8 +168,35 @@ export default async function decorate(block) {
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
+  const navBar = document.getElementsByTagName('nav');
+  window.addEventListener('scroll', () =>{
+    if(window.scrollY > 50) {
+      navBar[1].classList.add('scrollY')
+    } else {
+      navBar[1].classList.remove('scrollY');
+    }
+  })
+
+
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+  const navSecWrapper = document.createElement('div');
+  navSecWrapper.className = 'nav-wrapper';
+  navSecWrapper.append(navSec);
+
+  const signinBlock = navSecWrapper.querySelector('.signin');
+  const list = document.createElement('ul');
+  const listItem = document.createElement('li');
+  const signupButton = document.createElement('button');
+  signupButton.textContent = 'SIGN UP'
+  listItem.append(signupButton);
+  list.appendChild(listItem);
+  signinBlock.appendChild(list);
+  
+
+  block.append(navSecWrapper);
   block.append(navWrapper);
+
+
 }

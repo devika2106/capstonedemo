@@ -23,7 +23,7 @@ function buildHeroBlock(main) {
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
-    section.append(buildBlock('hero', { elems: [picture, h1] }));
+    section.append(buildBlock('hero', { elems: [picture] }));
     main.prepend(section);
   }
 }
@@ -83,6 +83,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  
 }
 
 /**
@@ -126,6 +127,7 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+  
 }
 
 /**
@@ -134,7 +136,7 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
-  window.setTimeout(() => import('./delayed.js'), 3000);
+  window.setTimeout(() => import('./delayed.js'), 1000);
   // load anything that can be postponed to the latest here
 }
 
