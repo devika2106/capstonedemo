@@ -5,7 +5,7 @@
     }
 
     .magazine-wrapper > div:nth-child(1) {
-        width: 85%;
+        width: 95%;
         margin-left: 1.5rem;
 
     }
@@ -143,6 +143,7 @@
 
     .author-separator > hr {
         width: 95%;
+        margin-left: 0rem;
     }
 
     .author-separator {

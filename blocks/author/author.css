@@ -2,6 +2,7 @@
     .author-wrapper-div {
         display: flex;
         width: 65%;
+        margin-left:3rem;
     }
 
     .author-wrapper-div .authorsociallinks  >  div {
@@ -10,6 +11,7 @@
         gap: 5px;
         width: fit-content;
         margin-left: 3rem;
+        margin-top: 0.5rem;
     }
 
     .author-wrapper-div .authorsociallinks > div img::before {
@@ -29,6 +31,7 @@
         height: 80px;
         object-fit: cover;
         width: 80px;
+        margin-top: 1rem;
     }
 
     .author-wrapper-div .authordetails > div {
