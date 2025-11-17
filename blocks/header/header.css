@@ -293,7 +293,6 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav .nav-sections .default-content-wrapper> ul > li {
-
     color: var(--textColor, #202020);
     font-size: var(--fontSizeSmall, 14px);
     padding: 15px 17px;
@@ -303,7 +302,6 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav .nav-sections .default-content-wrapper> ul > li:hover {
-
     background-color: #ffea00;
     text-decoration: none;
   }
@@ -314,7 +312,6 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav .nav-sections .default-content-wrapper> ul > li a .active {
-
     background-color: #ffea00;
 
   }
@@ -359,7 +356,7 @@ header .nav-wrapper:nth-child(2) {
 .scrollY {
   padding-top: 5px;
   padding-bottom: 15px;
-  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, .26);
+  box-shadow: 0 8px 10px 0 rgb(0 0 0 / 26%);
 }
 
 .buttonCls {

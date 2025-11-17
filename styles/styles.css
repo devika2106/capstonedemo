@@ -290,7 +290,6 @@ main > .section:first-of-type {
     left: 50%;
     position: fixed;
     top: 40%;
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 450px;
     z-index: 999999;
@@ -299,9 +298,7 @@ main > .section:first-of-type {
 
   .signup-block .form-wrapper {
     background: #202020;
-    -webkit-box-shadow: 0 10px 20px dimgray;
     box-shadow: 0 10px 20px dimgray;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 2rem;
     max-width: 450px;
@@ -332,7 +329,7 @@ main > .section:first-of-type {
   }
 
   .lockedmagazine .cards ul li a.button:any-link {
-    margin: 0px;
+    margin: 0;
   }
 
   .lockedmagazine .cards ul li .button {
@@ -345,11 +342,11 @@ main > .section:first-of-type {
     speak: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: -webkit-gradient(linear, right bottom, left top, from(hsla(0, 0%, 100%, 0)), color-stop(50%, hsla(0, 0%, 100%, 0)), color-stop(50%, var(--brandPrimary, #ffea00)), to(var(--brandPrimary, #ffea00)));
-    background: linear-gradient(to top left, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, 0) 50%, var(--brandPrimary, #ffea00) 50%, var(--brandPrimary, #ffea00) 100%);
+    background: -webkit-gradient(linear, right bottom, left top, from(hsl(0deg 0% 100% / 0%)), color-stop(50%, hsl(0deg 0% 100% / 0%)), color-stop(50%, var(--brandPrimary, #ffea00)), to(var(--brandPrimary, #ffea00)));
+    background: linear-gradient(to top left, hsl(0deg 0% 100% / 0%) 0, hsl(0deg 0% 100% / 0%) 50%, var(--brandPrimary, #ffea00) 50%, var(--brandPrimary, #ffea00) 100%);
     color: #000;
     content: "\e900";
-    font-family: 'lock-icon' !important;
+    font-family: lock-icon !important;
     font-size: 1.25rem;
     font-size: 24px;
     font-style: normal;
@@ -388,6 +385,7 @@ main .section.highlight {
   display: block;
   padding-top: 8px;
   width: 84px;
+
   /* content: ''; */
 }
 

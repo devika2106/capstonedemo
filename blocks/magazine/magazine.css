@@ -127,15 +127,13 @@
 
 
     .magazineWrapper .listofMagazineWrapper p > a::before {
-
         speak: none;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         content: "\e900";
         color: white;
         float: left;
-        font-family: 'download-icon' !important;
-        font-size: 1.25rem;
+        font-family: download-icon !important;
         font-size: 1.1rem;
         font-style: normal;
         font-variant: normal;

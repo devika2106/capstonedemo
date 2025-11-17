@@ -53,7 +53,6 @@
 .aboutuscards .cards  > ul  > li img {
   border-radius: 50%;
   height: 135px;
-
   object-fit: cover;
   width: 135px;
 }
@@ -82,7 +81,7 @@
   margin-top: 1rem;
 }
 
-.socialcontainer img:before {
+.socialcontainer img::before {
   content: "";
 }
 
