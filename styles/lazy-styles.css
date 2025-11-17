@@ -1,7 +1,6 @@
 /* add global styles that can be loaded post LCP here */
 .active
 {
- 
     background-color: #ffea00;
     color: var(--textColor, #202020);
     font-size: var(--fontSizeSmall, 14px);
@@ -9,4 +8,8 @@
     text-decoration: none;
     text-transform: uppercase;
 
+}
+
+.footerActive {
+    text-decoration: underline;
 }

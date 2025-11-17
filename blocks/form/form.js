@@ -27,7 +27,7 @@ async function createForm(formHref, submitHref) {
   });
 
   const successMesssage = document.createElement('p');
-  successMesssage.textContent  = 'Registered Successfully!!!';
+  successMesssage.textContent = 'Registered Successfully!!!';
   successMesssage.id = 'successMessage';
   successMesssage.classList.add('hide');
   form.appendChild(successMesssage);
@@ -59,7 +59,7 @@ async function handleSubmit(form) {
     form.setAttribute('data-submitting', 'true');
     submit.disabled = true;
 
-   
+
     // create payload
     const payload = generatePayload(form);
     const response = await fetch(form.dataset.action, {
@@ -73,8 +73,8 @@ async function handleSubmit(form) {
       if (form.dataset.confirmation) {
         window.location.href = form.dataset.confirmation;
       }
-     
-    
+
+
     } else {
       const error = await response.text();
       throw new Error(error);
@@ -91,17 +91,17 @@ async function handleSubmit(form) {
 
     setTimeout(() => {
       const signupBlock = document.querySelector('.signup-block');
-      if(signupBlock){
+      if (signupBlock) {
         signupBlock.classList.add('hide');
       }
       successMesssageBanner.classList.add('hide');
 
-    [...form.elements].forEach((field) => {
-      field.value = ''
-    });
-    },2000)
-    
-    
+      [...form.elements].forEach((field) => {
+        field.value = ''
+      });
+    }, 2000)
+
+
   }
 }
 
@@ -112,11 +112,9 @@ export default async function decorate(block) {
   if (!formLink || !submitLink) return;
 
   const form = await createForm(formLink, submitLink);
- 
-  block.replaceChildren(form);
-  const formWrapper = document.querySelector('.form');
 
- 
+  block.replaceChildren(form);
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const valid = form.checkValidity();

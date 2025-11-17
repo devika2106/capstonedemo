@@ -10,7 +10,7 @@ import {
   waitForFirstImage,
   loadSection,
   loadSections,
-  loadCSS
+  loadCSS,
 } from './aem.js';
 
 /**
@@ -83,6 +83,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  
 }
 
 /**

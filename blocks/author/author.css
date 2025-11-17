@@ -1,0 +1,48 @@
+@media (width >=900px) {
+    .authorWrapperDiv {
+        display: flex;
+        width: 65%;
+    }
+
+    .authorWrapperDiv .authorsociallinks  >  div {
+        background-color: black;
+        display: flex;
+        gap: 5px;
+        width: fit-content;
+        margin-left: 3rem;
+    }
+
+    .authorWrapperDiv .authorsociallinks > div img:before {
+        content: "";
+    }
+
+    .authorWrapperDiv .authorsociallinks > div img {
+        border-radius: 50%;
+        height: 20px;
+        padding: 10px;
+        object-fit: cover;
+        width: 30px;
+    }
+
+    .authorWrapperDiv .authorphoto > div img {
+        border-radius: 50%;
+        height: 80px;
+        object-fit: cover;
+        width: 80px;
+    }
+
+    .authorWrapperDiv .authordetails > div {
+        margin-left: 1rem;
+    }
+
+    .authorWrapperDiv .authordetails {
+        width: 55%;
+    }
+
+
+    .authorWrapperDiv .authordetails p {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+}

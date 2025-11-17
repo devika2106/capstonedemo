@@ -177,37 +177,6 @@ export default async function decorate(block) {
     }
   })
 
-  // const navBlock = document.getElementById('nav');
-  // const menuItems = ''
-  // if(navBlock){
-  //   menuItems = navBlock.querySelectorAll('li');
-  // }
-
-  //   // 🔹 Load saved active item from localStorage (if any)
-  //   const savedIndex = localStorage.getItem('activeMenuIndex');
-
-  //   if (savedIndex !== null) {
-  //     menuItems[savedIndex].classList.add('active');
-  //   }
-
-  //   menuItems.forEach((item, index) => {
-  //     item.addEventListener('click', () => {
-  //   // Remove active from all
-  //       menuItems.forEach(li => li.classList.remove('active'));
-
-  //   // Add active to the clicked one
-  //       item.classList.add('active');
-
-  //   // Save its index in localStorage
-  //       localStorage.setItem('activeMenuIndex', index);
-  //     });
-  //   });
-
-
-
-
-
-
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
@@ -224,18 +193,10 @@ export default async function decorate(block) {
   listItem.append(signupButton);
   list.appendChild(listItem);
   signinBlock.appendChild(list);
-  //listItem.appendChild(signupLink);
   
 
   block.append(navSecWrapper);
   block.append(navWrapper);
 
-  const metadata = await fetch('/metadata.json');
-  const meta = await metadata.json();
-  console.log("data-------" , meta);
-
-  // const indexdata = await fetch('/query-index.json');
-  // const data = await indexdata.json();
-  // console.log("data-------" , data);
 
 }

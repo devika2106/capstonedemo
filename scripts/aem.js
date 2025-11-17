@@ -13,13 +13,14 @@
 /* eslint-env browser */
 //import { createModal } from "../blocks/modal/modal.js";
 
+
 function sampleRUM(checkpoint, data) {
   // eslint-disable-next-line max-len
   const timeShift = () => (window.performance ? window.performance.now() : Date.now() - window.hlx.rum.firstReadTime);
   try {
     window.hlx = window.hlx || {};
     if (!window.hlx.rum || !window.hlx.rum.collector) {
-      sampleRUM.enhance = () => {};
+      sampleRUM.enhance = () => { };
       const param = new URLSearchParams(window.location.search).get('rum');
       const weight = (param === 'on' && 1)
         || (window.SAMPLE_PAGEVIEWS_AT_RATE === 'high' && 10)
@@ -512,122 +513,51 @@ async function decorateSections(main) {
   });
 
   const sectionElement = document.querySelector('.separator');
-  if(sectionElement && !sectionElement.querySelector('hr')) {
+  if (sectionElement && !sectionElement.querySelector('hr')) {
     const separator = document.createElement('hr');
     separator.classList.add('separator')
     sectionElement.appendChild(separator);
   }
 
   const aboutusCards = document.querySelectorAll('.aboutuscards');
-  if(aboutusCards){
-    aboutusCards.forEach((cards) => {      
+  if (aboutusCards) {
+    aboutusCards.forEach((cards) => {
       const listElements = cards.querySelectorAll('.cards-card-body');
       listElements.forEach((listElement) => {
-        if(!listElement.querySelector('.socialcontainer')) {
+        if (!listElement.querySelector('.socialcontainer')) {
           const container = document.createElement('div');
-            container.className = 'socialcontainer';
-            const paragraphs = listElement.querySelectorAll('p');
-            if(paragraphs) {
-              paragraphs.forEach(p => container.appendChild(p));          
-              listElement.appendChild(container);
-            }
+          container.className = 'socialcontainer';
+          const paragraphs = listElement.querySelectorAll('p');
+          if (paragraphs) {
+            paragraphs.forEach(p => container.appendChild(p));
+            listElement.appendChild(container);
+          }
         }
       })
-        
+
     })
+  }
 
+  const signupBlock = document.querySelector('.signup-block');
+  if (signupBlock) {
+    signupBlock.classList.add('hide');
+  }
+
+  window.addEventListener('click', function (e) {
     const signupBlock = document.querySelector('.signup-block');
-    if(signupBlock){
-      signupBlock.classList.add('hide');
-    }
-
-      window.addEventListener('click', function(e){   
-        const signupBlock = document.querySelector('.signup-block');
-        const signinBlock = document.querySelector('.signin ul');
-        if(signupBlock && signinBlock) {
-          if (!signupBlock.contains(e.target) && !signinBlock.contains(e.target)){
-            if(signupBlock.classList.contains('show')){
-              signupBlock.classList.remove('show');
-              signupBlock.classList.add('hide');
-            }
-          } 
+    const signinBlock = document.querySelector('.signin ul');
+    if (signupBlock && signinBlock) {
+      if (!signupBlock.contains(e.target) && !signinBlock.contains(e.target)) {
+        if (signupBlock.classList.contains('show')) {
+          signupBlock.classList.remove('show');
+          signupBlock.classList.add('hide');
         }
-      });
-
-      
+      }
     }
+  });
 
-      const magazinePage = document.querySelector('.magazinepage .default-content-wrapper');
-      const listofMagazine = document.querySelector('.listofmagazines .default-content-wrapper');
-
-      if(magazinePage && listofMagazine){
-        listofMagazine.classList.add('listofMagazineWrapper');
-        magazinePage.classList.add('magazineContentWrapper');
-        const wrapperDiv = document.createElement('div');
-        wrapperDiv.classList.add('section');
-        wrapperDiv.classList.add('magazineWrapper');
-        wrapperDiv.appendChild(magazinePage);
-        wrapperDiv.appendChild(listofMagazine);
-        main.append(wrapperDiv);
-        const separatorDiv = document.createElement('div');
-        const separatorElement = document.createElement('hr');
-        separatorDiv.classList.add('section');
-        separatorDiv.classList.add('separator');
-        separatorDiv.classList.add('authorSeparator');
-
-        separatorElement.classList.add('separator');
-        separatorDiv.appendChild(separatorElement);
-        main.append(separatorDiv);
-
-
-      }
-
-      const magazineSection = document.querySelector('.magazinepage');
-      const listofMagazineSection = document.querySelector('.listofmagazines');
-      if(magazineSection && listofMagazineSection) {
-        magazineSection.classList.add('hide');
-        listofMagazineSection.classList.add('hide');
-      }
-     
-
-    
-
-
-      const authorSectionWrapper = document.querySelector('.authorphoto .default-content-wrapper');
-      const authorDetailsWrapper = document.querySelector('.authordetails .default-content-wrapper');
-      const authorSocialWrapper = document.querySelector('.authorsociallinks .default-content-wrapper');
-
-      if(authorDetailsWrapper && authorSectionWrapper && authorSocialWrapper) {
-        const authorWrapperDiv = document.createElement('div');
-        authorWrapperDiv.appendChild(authorSectionWrapper);
-        authorWrapperDiv.appendChild(authorDetailsWrapper);
-        authorWrapperDiv.appendChild(authorSocialWrapper);
-        authorWrapperDiv.classList.add('section');
-        authorWrapperDiv.classList.add('authorWrapperDiv');
-        main.append(authorWrapperDiv);
-      }
-
-      const authorSection = document.querySelector('.authorphoto');
-      const authorDetails = document.querySelector('.authordetails');
-      const authorSocial = document.querySelector('.authorsociallinks');
-      if(authorSection && authorDetails && authorSocial) {
-        authorSection.classList.add('hide');
-        authorDetails.classList.add('hide');
-        authorSocial.classList.add('hide');
-      }
-     
-
-     
-    
-  
-
-//   const signupSection = document.querySelector('.signin');
-//   const signupLink = signupSection.querySelector('a');
-// if(signupLink){
-//     signupLink.addEventListener('click', createModal);
-// }
 }
-    
+
 
 /**
  * Builds a block DOM Element from a two dimensional array, string, or object
@@ -694,7 +624,7 @@ async function loadBlock(block) {
     }
     block.dataset.blockStatus = 'loaded';
 
-   
+
   }
   return block;
 }
@@ -803,53 +733,6 @@ async function loadSections(element) {
   }
 }
 
-// async function loadRedirects(){
-//   let redirects = [];
-//   await new Promise((resolve) => {
-//     fetch('/redirects.json')
-//   .then(res => res.json())
-//   .then(data => redirects = data)
-//   .catch(err => console.error('Could not load redirects:', err));
-//   });
-
-// // Function to handle navigation
-// function navigateTo(pathWithHash) {
-//   // Only process URLs that have a hash
-//   if (!pathWithHash.includes('#')) return;
-
-//   // Check if the path+hash matches a redirect rule
-//   const redirect = redirects.find(r => r.from === pathWithHash);
-//   if (!redirect) return;
-
-//   const destination = redirect.to;
-
-//   // Update URL without reloading
-//   history.pushState(null, '', destination);
-
-//   // Scroll to the element specified by hash
-//   const hash = destination.split('#')[1];
-//   if (hash) {
-//     const el = document.getElementById(hash);
-//     if (el) el.scrollIntoView({ behavior: 'smooth' });
-//   }
-
-//   // Optional: dynamically load content if needed
-//   console.log(`Redirected to ${destination} without page reload`);
-// }
-
-// // Intercept clicks on all links
-// window.addEventListener('click', e => {
-//   const link = e.target.closest('a');
-//   if (!link) return;
-
-//   const href = link.getAttribute('href');
-//   if (!href.includes('#')) return; // Only handle links with #
-
-//   e.preventDefault(); // prevent normal navigation
-//   navigateTo(href);
-// });
-
-// }
 
 init();
 

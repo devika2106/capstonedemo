@@ -14,7 +14,6 @@ export default async function decorate(block) {
   const footerSecMeta = getMetadata('footersec');
   const footerSecPath = footerSecMeta ? new URL(footerSecMeta, window.location).pathname : '/footersec';
   const fragmentSec = await loadFragment(footerSecPath);
-  
 
   // decorate footer DOM
   block.textContent = '';
@@ -26,8 +25,4 @@ export default async function decorate(block) {
   block.append(footer);
   block.append(footerSec);
 
-
- 
-
- 
 }

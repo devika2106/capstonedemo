@@ -1,4 +1,4 @@
-.cards > ul {
+.cards  > ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
   gap: 24px;
 }
 
-.cards > ul > li {
+.cards  > ul  > li {
   background-color: var(--background-color);
 }
 
@@ -19,7 +19,7 @@
   line-height: 0;
 }
 
-.cards > ul > li img {
+.cards  > ul  > li img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -29,37 +29,37 @@
   text-transform: uppercase;
 }
 
-.cards .cards-card-body p:nth-of-type(2){
+.cards .cards-card-body p:nth-of-type(2) {
   text-overflow: ellipsis;
   overflow: hidden;
   height: 50px;
   white-space: nowrap;
   text-transform: uppercase;
-  color:dimgray;
+  color: dimgray;
   font-size: 14px;
 }
 
-.articlesection .cards .cards-card-body p:nth-of-type(2){
+.articlesection .cards .cards-card-body p:nth-of-type(2) {
   text-overflow: ellipsis;
   overflow: hidden;
   height: 50px;
   white-space: nowrap;
   text-transform: uppercase;
-  color:dimgray;
+  color: dimgray;
   font-size: 14px;
 }
 
 
-.aboutuscards .cards > ul > li img {
+.aboutuscards .cards  > ul  > li img {
   border-radius: 50%;
   height: 135px;
-  
+
   object-fit: cover;
   width: 135px;
 }
 
 
-.aboutuscards .cards > ul > li {
+.aboutuscards .cards  > ul  > li {
   border: none;
   background-color: var(--background-color);
 }
@@ -70,37 +70,36 @@
 }
 
 .aboutuscards .cards .cards-card-image {
-  margin-left : 4rem;
+  margin-left: 4rem;
 }
 
 .socialcontainer {
   background-color: black;
-    display: flex;
-    gap: 5px;
-    width: fit-content;
-    margin-left: 3rem;
-    margin-top: 1rem;
+  display: flex;
+  gap: 5px;
+  width: fit-content;
+  margin-left: 3rem;
+  margin-top: 1rem;
 }
 
 .socialcontainer img:before {
   content: "";
 }
 
-.aboutuscards .cards > ul > li .socialcontainer img {
+.aboutuscards .cards  > ul  > li .socialcontainer img {
   border-radius: 50%;
   height: 20px;
-  padding:10px;
+  padding: 10px;
   object-fit: cover;
   width: 30px;
 }
 
 .aboutuscards .cards .cards-card-body h3 {
-  font-size : 24px;
+  font-size: 24px;
 }
 
 .aboutuscards .cards .cards-card-body h5 {
   font-family: var(--body-bold-font-family);
-  font-size : 14px;
+  font-size: 14px;
   text-transform: uppercase;
 }
-

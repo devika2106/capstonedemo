@@ -32,18 +32,24 @@ footer .footer .footersec > div > p > a.button:any-link {
   display: inline;
 }
 
-footer .footer .footersec > div > p:nth-child(2){
+footer .footer .footersec > div > p > a.button {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+footer .footer .footersec > div > p:nth-child(2) {
   margin-left: 5rem;
 }
 
-footer .footer .footerfollow > div{
+footer .footer .footerfollow > div {
   margin-left: 26rem;
   margin-top:20px;
 }
 
 footer .footer .footerfollow > div > h4{
-  font-size: 1pc;
+  font-size: 16px;
   font-weight:600;
+  font-family: var(--body-bold-font-family);
 }
 
 
