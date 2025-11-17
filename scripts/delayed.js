@@ -1,54 +1,53 @@
 // add delayed functionality here
 
 const signinBlock = document.querySelectorAll('.signin');
-if (signinBlock.length == 1) {
+if (signinBlock.length === 1) {
   const signupBtn = signinBlock[0].querySelector('button');
   if (signupBtn) {
     signupBtn.addEventListener('click', () => {
       const signupBlock = document.querySelector('.signup-block');
       if (signupBlock.classList.contains('hide')) {
         signupBlock.classList.remove('hide');
-        signupBlock.classList.add('show')
+        signupBlock.classList.add('show');
       } else {
         signupBlock.classList.remove('show');
-        signupBlock.classList.add('hide')
+        signupBlock.classList.add('hide');
       }
-    })
+    });
   }
 }
 
-//to find menu active header section
-const currentPage = window.location.pathname.split("/");
+// to find menu active header section
+const currentPage = window.location.pathname.split('/');
 const menuLinks = document.querySelectorAll('.header a');
 
-if (currentPage.length > 1 && currentPage[1] !== "") {
-  menuLinks.forEach(link => {
+if (currentPage.length > 1 && currentPage[1] !== '') {
+  menuLinks.forEach((link) => {
     const linkPage = link.getAttribute('href');
     if (linkPage.includes(currentPage[1])) {
-
-      link.closest("li").classList.add('active');
+      link.closest('li').classList.add('active');
     }
   });
 } else {
-  menuLinks.forEach(link => {
-    const listItem = link.closest("li");
+  menuLinks.forEach((link) => {
+    const listItem = link.closest('li');
     listItem.classList.remove('active');
   });
 }
 
-//footer section
+// footer section
 const menuFooterLinks = document.querySelectorAll('.footer a');
 
-if (currentPage.length > 1 && currentPage[1] !== "") {
-  menuFooterLinks.forEach(link => {
+if (currentPage.length > 1 && currentPage[1] !== '') {
+  menuFooterLinks.forEach((link) => {
     const linkPage = link.getAttribute('href');
     if (linkPage.includes(currentPage[1])) {
-      link.closest("p").classList.add('footerActive');
+      link.closest('p').classList.add('footerActive');
     }
   });
 } else {
-  menuFooterLinks.forEach(link => {
-    const listItem = link.closest("p");
+  menuFooterLinks.forEach((link) => {
+    const listItem = link.closest('p');
     listItem.classList.remove('footerActive');
   });
 }
