@@ -14,4 +14,22 @@ export default function decorate(block) {
   });
   ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.replaceChildren(ul);
+
+  const aboutusCards = document.querySelectorAll('.aboutuscards');
+  if (aboutusCards) {
+    aboutusCards.forEach((cards) => {
+      const listElements = cards.querySelectorAll('.cards-card-body');
+      listElements.forEach((listElement) => {
+        if (!listElement.querySelector('.socialcontainer')) {
+          const container = document.createElement('div');
+          container.className = 'socialcontainer';
+          const paragraphs = listElement.querySelectorAll('p');
+          if (paragraphs) {
+            paragraphs.forEach((p) => container.appendChild(p));
+            listElement.appendChild(container);
+          }
+        }
+      });
+    });
+  }
 }

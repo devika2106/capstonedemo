@@ -113,14 +113,6 @@ export default async function decorate(block) {
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
-  const navSecMeta = getMetadata('headersec');
-  const navSecPath = navSecMeta ? new URL(navSecMeta, window.location).pathname : '/headersec';
-  const navSecFragment = await loadFragment(navSecPath);
-
-  const navSec = document.createElement('nav');
-  while (navSecFragment.firstElementChild) navSec.append(navSecFragment.firstElementChild);
-  navSec.children[0].classList.add('nav-sections');
-
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
@@ -154,6 +146,15 @@ export default async function decorate(block) {
     });
   }
 
+  const navBar = document.getElementsByTagName('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navBar[0].classList.add('scroll-y');
+    } else {
+      navBar[0].classList.remove('scroll-y');
+    }
+  });
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
@@ -167,31 +168,49 @@ export default async function decorate(block) {
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
-  const navBar = document.getElementsByTagName('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navBar[1].classList.add('scroll-y');
-    } else {
-      navBar[1].classList.remove('scroll-y');
-    }
-  });
-
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
-  const navSecWrapper = document.createElement('div');
-  navSecWrapper.className = 'nav-wrapper';
-  navSecWrapper.append(navSec);
 
-  const signinBlock = navSecWrapper.querySelector('.signin');
-  const list = document.createElement('ul');
-  const listItem = document.createElement('li');
-  const signupButton = document.createElement('button');
-  signupButton.textContent = 'SIGN UP';
-  listItem.append(signupButton);
-  list.appendChild(listItem);
-  signinBlock.appendChild(list);
-
-  block.append(navSecWrapper);
+  const signinBlock = document.createElement('div');
+  signinBlock.classList.add('signin');
+  const signinButton = document.createElement('button');
+  signinButton.textContent = 'SIGN IN';
+  signinBlock.appendChild(signinButton);
+  block.append(signinBlock);
   block.append(navWrapper);
+
+  const currentPage = window.location.pathname.split('/');
+  const menuLinks = document.querySelectorAll('.nav-sections a');
+
+  if (currentPage.length > 1 && currentPage[1] !== '') {
+    menuLinks.forEach((link) => {
+      const linkPage = link.getAttribute('href');
+      if (linkPage.includes(currentPage[1])) {
+        link.closest('li').classList.add('active');
+      }
+    });
+  } else {
+    menuLinks.forEach((link) => {
+      const listItem = link.closest('li');
+      listItem.classList.remove('active');
+    });
+  }
+
+  const signinBlockDiv = document.querySelector('.signin');
+  if (signinBlockDiv) {
+    const signupBtn = signinBlockDiv.querySelector('button');
+    if (signupBtn) {
+      signupBtn.addEventListener('click', () => {
+        const signupBlock = document.querySelector('.signup-block');
+        if (signupBlock.classList.contains('hide')) {
+          signupBlock.classList.remove('hide');
+          signupBlock.classList.add('show');
+        } else {
+          signupBlock.classList.remove('show');
+          signupBlock.classList.add('hide');
+        }
+      });
+    }
+  }
 }

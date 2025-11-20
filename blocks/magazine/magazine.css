@@ -1,155 +1,173 @@
-@media (width >=900px) {
+.magazine-wrapper {
+    display: flex;
+    flex-direction: column; 
+}
+
+.magazine-wrapper > .listof-magazine-wrapper {
+    margin: 0;
+}
+
+.magazine-wrapper > .listof-magazine-wrapper li {
+    height: 50pt;
+    border-left: 5px solid #ebebeb;
+    list-style: none;
+    padding: 2rem;
+    margin: 2rem -2rem;
+}
+
+.magazine-wrapper .listof-magazine-wrapper ul a {
+    display: flex;
+    flex-direction: column;
+}
+
+.magazine-wrapper > .listof-magazine-wrapper li > a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+.magazine-wrapper > .listof-magazine-wrapper li:hover {
+    border-left: 5px solid black;
+    background-color: #ffea00;
+}
+
+.magazine-content-wrapper p {
+    font-size: 18px;
+}
+
+.magazine-wrapper blockquote + p {
+    margin-top: -4rem;
+    margin-bottom: 4rem;
+    margin-left: 5rem;
+    padding: 10px;
+}
+
+.magazine-wrapper blockquote > p {
+    padding: 3rem;
+    font-size: 25px;
+}
+
+
+.magazine-wrapper blockquote > p::after {
+    border-bottom: 2px solid #ffea00;
+    content: "";
+    display: block;
+    padding-top: 8px;
+    width: 84px;
+}
+
+.magazine-wrapper blockquote {
+    background-color: #ebebeb;
+    height: auto;
+    margin:0;
+    padding : 0;
+}
+
+.magazine-content-wrapper h1:nth-child(1) {
+    font-size: 40px;
+}
+
+.magazine-content-wrapper {
+    text-align: justify;
+}
+
+.magazine-wrapper .listof-magazine-wrapper p > a:any-link {
+    background-color: #202020;
+    color: #fff;
+    float: left;
+    height: 3pc;
+}
+
+.magazine-wrapper .listof-magazine-wrapper ul {
+    margin-top: 7rem;
+    text-transform: uppercase;
+}
+
+.listof-magazine-wrapper ul .title {
+    color:  #202020;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.listof-magazine-wrapper ul .date {
+    color: dimgray;
+    font-size:  9pt;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.magazine-wrapper .listof-magazine-wrapper p,
+.magazine-wrapper .listof-magazine-wrapper h4 {
+    text-transform: uppercase;
+    font-family: var(--body-bold-font-family);
+}
+
+.magazine-wrapper .listof-magazine-wrapper h5 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--body-bold-font-family);
+}
+
+.magazine-wrapper .magazine-content-wrapper p {
+    line-height: 45px;
+}
+
+
+.magazine-wrapper .listof-magazine-wrapper p {
+    font-size: 12px;
+}
+
+
+
+.magazine-wrapper .listof-magazine-wrapper p > a::before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e900";
+    color: white;
+    float: left;
+    font-family: download-icon !important;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: -.1em;
+    padding-right: .5em;
+    text-transform: none;
+    display: inline-block;
+
+}
+
+.author-separator > hr {
+    width: 95%;
+    margin-left: 0;
+}
+
+.author-separator {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media (width >= 900px) {
     .magazine-wrapper {
         display: flex;
-
+        flex-direction: row; 
     }
 
     .magazine-wrapper > div:nth-child(1) {
         width: 95%;
         margin-left: 1.5rem;
-
-    }
-
-    .magazine-wrapper > div:nth-child(2) {
-        margin: 0;
-    }
-
-    .magazine-wrapper > div:nth-child(2) li {
-        height: 50pt;
-        border-left: 5px solid #ebebeb;
-        list-style: none;
-        padding: 2rem;
-        padding-top: 1rem;
-        margin: 2rem;
-    }
-
-    .magazine-wrapper .listof-magazine-wrapper ul a {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .magazine-wrapper > div:nth-child(2) li > a {
-        text-decoration: none;
-        color: var(--text-color);
-    }
-
-
-    .magazine-wrapper > div:nth-child(2) li:hover {
-        border-left: 5px solid black;
-        background-color: #ffea00;
-    }
-
-    .magazine-wrapper blockquote + p {
-        margin-top: -4rem;
-        margin-bottom: 4rem;
-        margin-left: 5rem;
-        padding: 10px;
-    }
-
-    .magazine-wrapper blockquote > p {
-        padding: 3rem;
-        font-size: 25px;
-    }
-
-
-    .magazine-wrapper blockquote > p::after {
-        border-bottom: 2px solid #ffea00;
-        content: "";
-        display: block;
-        padding-top: 8px;
-        width: 84px;
-    }
-
-    .magazine-wrapper blockquote {
-        background-color: #ebebeb;
-        height: auto;
-    }
-
-    .magazine-content-wrapper h1:nth-child(1) {
-        font-size: 40px;
-    }
-
-    .magazine-content-wrapper {
-        text-align: justify;
-    }
-
-    .magazine-wrapper .listof-magazine-wrapper p > a:any-link {
-        background-color: #202020;
-        color: #fff;
-        float: left;
-        height: 3pc;
-    }
-
-    .magazine-wrapper .listof-magazine-wrapper ul {
-        margin-top: 7rem;
-        text-transform: uppercase;
-    }
-
-    .listof-magazine-wrapper ul .title {
-        color:  #202020;
-        padding: 5px;
-        text-transform: uppercase;
-    }
-
-    .listof-magazine-wrapper ul .date {
-        color: dimgray;
-        font-size:  9pt;
-        padding: 5px;
-        text-transform: uppercase;
+    
     }
 
     .magazine-wrapper .listof-magazine-wrapper p,
-    .magazine-wrapper .listof-magazine-wrapper h4 {
-        margin-left: 4.5rem;
-        text-transform: uppercase;
-        font-family: var(--body-bold-font-family);
-    }
-
+    .magazine-wrapper .listof-magazine-wrapper h4,
     .magazine-wrapper .listof-magazine-wrapper h5 {
         margin-left: 4.5rem;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: 600;
-        font-family: var(--body-bold-font-family);
     }
 
-    .magazine-wrapper .magazine-content-wrapper p {
-        line-height: 45px;
+    .magazine-wrapper > .listof-magazine-wrapper li {
+        margin: 2rem;
+        padding-top: 0.5rem;
     }
-
-
-    .magazine-wrapper .listof-magazine-wrapper p {
-        font-size: 12px;
-    }
-
-
-
-    .magazine-wrapper .listof-magazine-wrapper p > a::before {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        content: "\e900";
-        color: white;
-        float: left;
-        font-family: download-icon !important;
-        font-size: 1.1rem;
-        font-weight: 400;
-        line-height: 1;
-        margin-top: -.1em;
-        padding-right: .5em;
-        text-transform: none;
-        display: inline-block;
-
-    }
-
-    .author-separator > hr {
-        width: 95%;
-        margin-left: 0;
-    }
-
-    .author-separator {
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-    }
-
-
 }
+
