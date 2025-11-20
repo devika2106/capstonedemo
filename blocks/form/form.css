@@ -99,6 +99,25 @@
   .form .button {
     max-width: max-content;
   }
+
+  .signup-block {
+    left: 52%;
+    position: fixed;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    z-index: 999999;
+  }
+  
+  .signup-block .form-wrapper {
+    background: #202020;
+    box-shadow: 0 10px 20px dimgray;
+    box-sizing: border-box;
+    margin: 2rem;
+    max-width: 450px;
+    padding: 2rem 1.75rem !important;
+    color: white
+  } 
 }
 
 @media (width >= 900px) {
@@ -107,6 +126,25 @@
   .form textarea {
     max-width: 33vw;
   }
+
+  .signup-block {
+    left: 52%;
+    position: fixed;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    z-index: 999999;
+  }
+  
+  .signup-block .form-wrapper {
+    background: #202020;
+    box-shadow: 0 10px 20px dimgray;
+    box-sizing: border-box;
+    margin: 2rem;
+    max-width: 450px;
+    padding: 2rem 1.75rem !important;
+    color: white
+  } 
 }
 
 .form .field-wrapper.selection-wrapper {
@@ -176,3 +214,23 @@
     padding-top: 8px;
     width: 60px;
 }
+
+@media (width <=480px) {
+  .signup-block {
+    left: 37%;
+    position: fixed;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 999999;
+  }
+
+  
+  .signup-block .form-wrapper {
+    background: #202020;
+    box-shadow: 0 10px 20px dimgray;
+    box-sizing: border-box;
+    padding: 2rem 1.75rem !important;
+  }  
+
+}
+

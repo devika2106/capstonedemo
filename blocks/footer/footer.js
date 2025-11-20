@@ -24,4 +24,38 @@ export default async function decorate(block) {
 
   block.append(footer);
   block.append(footerSec);
+
+  const currentPage = window.location.pathname.split('/');
+  const menuFooterLinks = document.querySelectorAll('.footersec a');
+
+  if (currentPage.length > 1 && currentPage[1] !== '') {
+    menuFooterLinks.forEach((link) => {
+      const linkPage = link.getAttribute('href');
+      if (linkPage.includes(currentPage[1])) {
+        link.closest('p').classList.add('footer-active');
+      }
+    });
+  } else {
+    menuFooterLinks.forEach((link) => {
+      const listItem = link.closest('p');
+      listItem.classList.remove('footer-active');
+    });
+  }
+
+  const signupBlock = document.querySelector('.signup-block');
+  if (signupBlock) {
+    signupBlock.classList.add('hide');
+  }
+
+  window.addEventListener('click', (e) => {
+    const signinBlock = document.querySelector('.signin');
+    if (signupBlock && signinBlock) {
+      if (!signupBlock.contains(e.target) && !signinBlock.contains(e.target)) {
+        if (signupBlock.classList.contains('show')) {
+          signupBlock.classList.remove('show');
+          signupBlock.classList.add('hide');
+        }
+      }
+    }
+  });
 }

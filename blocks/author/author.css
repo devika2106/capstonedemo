@@ -49,3 +49,39 @@
     }
 
 }
+
+.author-wrapper-div .authorsociallinks  >  div {
+    background-color: black;
+    display: flex;
+    gap: 13px;
+    width: fit-content;
+    margin-top: 1.5rem;
+}
+
+.author-wrapper-div .authorphoto {
+    width: fit-content;
+    position: absolute;
+}
+
+.author-wrapper-div  img {
+    border-radius: 50%;
+    height: 63px;
+    object-fit: cover;
+    width: 61px;
+}
+
+.author-wrapper-div .authordetails {
+    position: relative;
+    padding-left: 5rem;
+
+}
+
+.author-wrapper-div .authordetails h3{
+    font-size: 24px;
+}
+
+.author-wrapper-div .authordetails p{
+    text-transform: uppercase;
+}
+
+

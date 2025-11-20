@@ -63,13 +63,12 @@
   background-color: var(--background-color);
 }
 
-
 .aboutuscards .cards .cards-card-body {
   text-align: center;
 }
 
 .aboutuscards .cards .cards-card-image {
-  margin-left: 4rem;
+  margin-left: 5rem;
 }
 
 .socialcontainer {
@@ -101,4 +100,19 @@
   font-family: var(--body-bold-font-family);
   font-size: 14px;
   text-transform: uppercase;
+}
+
+@media (width >= 900px) {
+  .socialcontainer {
+    background-color: black;
+    display: flex;
+    gap: 5px;
+    width: fit-content;
+    margin-left: 3rem;
+    margin-top: 1rem;
+  }
+
+  .aboutuscards .cards .cards-card-image {
+    margin-left: 4rem;
+  }
 }

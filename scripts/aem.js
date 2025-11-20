@@ -517,41 +517,6 @@ async function decorateSections(main) {
     separator.classList.add('separator');
     sectionElement.appendChild(separator);
   }
-
-  const aboutusCards = document.querySelectorAll('.aboutuscards');
-  if (aboutusCards) {
-    aboutusCards.forEach((cards) => {
-      const listElements = cards.querySelectorAll('.cards-card-body');
-      listElements.forEach((listElement) => {
-        if (!listElement.querySelector('.socialcontainer')) {
-          const container = document.createElement('div');
-          container.className = 'socialcontainer';
-          const paragraphs = listElement.querySelectorAll('p');
-          if (paragraphs) {
-            paragraphs.forEach((p) => container.appendChild(p));
-            listElement.appendChild(container);
-          }
-        }
-      });
-    });
-  }
-
-  const signupBlock = document.querySelector('.signup-block');
-  if (signupBlock) {
-    signupBlock.classList.add('hide');
-  }
-
-  window.addEventListener('click', (e) => {
-    const signinBlock = document.querySelector('.signin ul');
-    if (signupBlock && signinBlock) {
-      if (!signupBlock.contains(e.target) && !signinBlock.contains(e.target)) {
-        if (signupBlock.classList.contains('show')) {
-          signupBlock.classList.remove('show');
-          signupBlock.classList.add('hide');
-        }
-      }
-    }
-  });
 }
 
 /**
